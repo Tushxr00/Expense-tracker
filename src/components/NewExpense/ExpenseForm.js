@@ -44,8 +44,20 @@ const ExpenseForm = () => {
     //   return {...previousState, enteredAmount: event.target.value,}
     // })
   };
+
+  const submitHandler = (event) =>{
+    event.preventDefault();
+    
+    const expenseData = {
+      title: enteredTitle,
+      amount : enteredAmount,
+      date: new Date(enteredDate)
+    };
+    console.log(expenseData)
+  };
+
   return (
-    <form>
+    <form onSubmit={submitHandler}>
       {/* <p>{userInput.enteredTitle}</p>
       <p>{userInput.enteredDate}</p>
       <p>{userInput.enteredAmount}</p> */}
