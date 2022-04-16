@@ -5,44 +5,15 @@ const ExpenseForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
-  // const [userInput, setUserInput] = useState({
-  //   enteredTitle: "",
-  //   enteredDate: "",
-  //   enteredAmount: "",
-  // });
 
   const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value);
-    // setEntertitle(event.target.value);
-    // setUserInput({
-    //   ...userInput,
-    //   enteredTitle: event.target.value,
-    // });
-    // setUserInput((previousState)=>{
-    //   return {...previousState, enteredTitle: event.target.value}
-    // })
   };
   const dateChangeHandler = (event) => {
     setEnteredDate(event.target.value);
-    // setEnterDate(event.target.value);
-    // setUserInput({
-    //   ...userInput,
-    //   enteredDate: event.target.value,
-    // });
-    // setUserInput((previousState)=>{
-    //   return {...previousState,  enteredDate: event.target.value}
-    // })
   };
   const amountChangeHandler = (event) => {
     setEnteredAmount(event.target.value);
-    // setEnterAmount(event.target.value);
-    // setUserInput({
-    //   ...userInput,
-    //   enteredAmount: event.target.value,
-    // });
-    // setUserInput((previousState)=>{
-    //   return {...previousState, enteredAmount: event.target.value,}
-    // })
   };
 
   const submitHandler = (event) => {
@@ -50,9 +21,10 @@ const ExpenseForm = (props) => {
 
     const expenseData = {
       title: enteredTitle,
-      amount: enteredAmount,
+      amount: Number(enteredAmount),
       date: new Date(enteredDate),
     };
+
     props.onSaveExpenseData(expenseData);
     setEnteredTitle("");
     setEnteredAmount("");
@@ -61,13 +33,6 @@ const ExpenseForm = (props) => {
 
   return (
     <form onSubmit={submitHandler}>
-      {/* <p>{userInput.enteredTitle}</p>
-      <p>{userInput.enteredDate}</p>
-      <p>{userInput.enteredAmount}</p> */}
-      {/* <p>{userInput}</p> */}
-      {/* <p>{enteredTitle}</p>
-      <p>{enteredAmount}</p>
-      <p>{enteredDate}</p> */}
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
