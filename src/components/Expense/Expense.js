@@ -19,7 +19,21 @@ const Expense = (props) => {
         selected={filteredYear}
         onChangeFilter={filterChangeHandler}
       />
-      {filteredExpense.length === 0 ? (
+      {/* this works just like a terniary operator
+      -> checks the first condition if that is true the and condition is rendered on the dom
+      */}
+      {filteredExpense.length === 0 && <p> no expense occured </p>}
+      {filteredExpense.length > 0 &&
+        filteredExpense.map((expense) => (
+          <ExpenseItem
+            key={expense.id}
+            title={expense.title}
+            amount={expense.amount}
+            date={expense.date}
+          />
+        ))}
+      {/* Applying terniary operator for conditional rendering  */}
+      {/* {filteredExpense.length === 0 ? (
         <p> No expenses found </p>
       ) : (
         filteredExpense.map((expense) => (
@@ -30,8 +44,7 @@ const Expense = (props) => {
             date={expense.date}
           />
         ))
-      )}
-      {}
+      )} */}
     </Card>
   );
 };
