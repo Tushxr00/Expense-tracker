@@ -13,7 +13,7 @@ const dummyExpenses = [
     id: `e2`,
     title: `Anime`,
     amount: 5000,
-    date: new Date(2022, 6, 1),
+    date: new Date(2021, 6, 1),
   },
   {
     id: `e3`,
@@ -25,7 +25,7 @@ const dummyExpenses = [
     id: `e4`,
     title: `Car Insurance`,
     amount: 10000,
-    date: new Date(2022, 9, 8),
+    date: new Date(2023, 9, 8),
   },
 ];
 const App = () => {
